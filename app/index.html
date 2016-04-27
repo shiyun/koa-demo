@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/es6-shim.min.js"></script>
+    <script src="/js/zone.min.js"></script> 
+    <script src="/js/system-polyfills.js"></script>
+    <script src="/js/shims_for_IE.js"></script>   
+    <script src="/js/angular2-polyfills.js"></script>
+    <script src="/js/system.src.js"></script>
+	<script>
+		System.config({
+			defaultJSExtensions: true,
+			 map: {
+				rxjs: '/js'
+			},
+			packages: {
+				rxjs: {
+					defaultExtension: 'js'
+				}
+			}
+		});
+	</script>
+    <script src="/js/angular2.dev.js"></script>
+    <script src="/js/router.dev.js"></script>    
+	<script src="/js/Rx.js"></script>
+    <script>       
+	   System.import('/js/ts/main');		  
+    </script>
+  </head>
+  <body>
+	<p>{{title}}</p>
+    <my-app>Loading...</my-app>
+  </body>
+</html>

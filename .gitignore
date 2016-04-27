@@ -1,0 +1,7 @@
+node_modules/
+.gulp/node_modules/
+app/*.map
+app/*.js
+.idea/
+npm-debug.log
+*.map

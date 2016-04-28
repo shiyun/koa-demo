@@ -17,6 +17,8 @@ app.use(bodyParser());
 }))*/
 
 app.use(staticServ(path.join(__dirname, 'ng2')));
+app.use(route.get(/^\/ng\/?/, index));
+
 
 app.use(route.get('/', index));
 

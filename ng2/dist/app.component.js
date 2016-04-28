@@ -49,23 +49,23 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/heroes',
+                            path: '/ng/heroes',
                             name: 'Heroes',
                             component: heroes_component_1.HeroComponent
                         },
                         {
-                            path: '/dashboard',
+                            path: '/ng/dashboard',
                             name: 'MyDashboard',
                             component: dashboard_component_1.DashboardComponent,
                             useAsDefault: true
                         },
                         {
-                            path: '/heroDetail/:id',
+                            path: '/ng/heroDetail/:id',
                             name: 'HeroDetail',
                             component: hero_detail_component_1.HeroDetail
                         },
                         {
-                            path: '/heroDetail/:id/:sid',
+                            path: '/ng/heroDetail/:id/:sid',
                             name: 'HeroDetailThree',
                             component: heroThree_component_1.HeroDetailThree
                         }

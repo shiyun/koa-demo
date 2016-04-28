@@ -20,23 +20,23 @@ import {HeroDetailThree} from './heroThree.component';
 
 @RouteConfig([
   {
-    path: '/heroes',
+    path: '/ng/heroes',
     name: 'Heroes',                                                                                                                                         
     component: HeroComponent
   },
   {
-    path: '/dashboard',
+    path: '/ng/dashboard',
     name: 'MyDashboard',
     component: DashboardComponent,
     useAsDefault: true
   },
   {
-    path: '/heroDetail/:id',
+    path: '/ng/heroDetail/:id',
     name: 'HeroDetail',
     component: HeroDetail
   },
   {
-    path: '/heroDetail/:id/:sid',
+    path: '/ng/heroDetail/:id/:sid',
     name: 'HeroDetailThree',
     component: HeroDetailThree
   }

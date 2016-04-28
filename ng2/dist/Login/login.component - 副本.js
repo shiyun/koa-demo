@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'ng2-material/all'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, all_1;
     var LoginComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (all_1_1) {
+                all_1 = all_1_1;
             }],
         execute: function() {
             LoginComponent = (function () {
@@ -24,7 +27,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 LoginComponent = __decorate([
                     core_1.Component({
                         selector: 'login-page',
-                        template: "<p>ddddddddd</p>"
+                        template: "\n    <h1>this is login page</h1>\n  ",
+                        directives: [all_1.MATERIAL_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LoginComponent);
@@ -34,4 +38,4 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=login.component.js.map
+//# sourceMappingURL=login.component - 副本.js.map

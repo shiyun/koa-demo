@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './heroes.component', './dashboard.component', './hero.service', './hero-detail.component', './heroThree.component', './login.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './heroes.component', './dashboard.component', './hero.service', './hero-detail.component', './heroThree.component', './Login/login.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -54,7 +54,8 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
                         {
                             path: '/ng/login',
                             name: 'Login',
-                            component: login_component_1.LoginComponent
+                            component: login_component_1.LoginComponent,
+                            useAsDefault: true
                         },
                         {
                             path: '/ng/heroes',
@@ -64,8 +65,7 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
                         {
                             path: '/ng/dashboard',
                             name: 'MyDashboard',
-                            component: dashboard_component_1.DashboardComponent,
-                            useAsDefault: true
+                            component: dashboard_component_1.DashboardComponent
                         },
                         {
                             path: '/ng/heroDetail/:id',

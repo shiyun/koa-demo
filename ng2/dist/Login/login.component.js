@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', '../hero-detail.component', './login.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, hero_detail_component_1, login_service_1;
     var LoginComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (hero_detail_component_1_1) {
+                hero_detail_component_1 = hero_detail_component_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             LoginComponent = (function () {
@@ -24,7 +30,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 LoginComponent = __decorate([
                     core_1.Component({
                         selector: 'login-page',
-                        template: "<p>ddddddddd</p>"
+                        templateUrl: 'app/Login/login.html',
+                        styleUrls: ['app/Login/login.css'],
+                        directives: [hero_detail_component_1.HeroDetail],
+                        providers: [login_service_1.LoginService]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LoginComponent);

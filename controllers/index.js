@@ -7,8 +7,9 @@ function Routes(){
 }
 
 Routes.prototype.ng2Ctrl = function* (next){
-	let _data = {title: '首页', result: jsonFormat.success('消息1')};
-	this.body = yield render('index', _data);
+	//let _data = {title: '首页', result: jsonFormat.success('消息1')};
+	//this.body = yield render('index', _data);
+	this.redirect('/');
 }
 
 module.exports = new Routes();

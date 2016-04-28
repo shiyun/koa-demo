@@ -12,7 +12,7 @@ import {HeroService} from './hero.service';
       <li *ngFor="#hero of heroes;#i=index;"
         [class.selected]="hero === selectedHero"
         (click)="onSelect(hero)">
-        <span class="badge" #id_{{i}} (click)="bbb(i);">{{hero.id}}</span> {{hero.name}}
+        <span class="badge" #id_{{i}}>{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
@@ -82,18 +82,17 @@ export class HeroComponent implements OnInit{
     this.getHeros();
   }
   onSelect(hero: Hero) { this.selectedHero = hero; }
-  bbb(a){alert(a)}  
 }
 
 var HEROES: Hero[] = [
-  { "id": 1, "name": "Mr. Nice", "product":[] },
-  { "id": 2, "name": "Narco", "product":[]  },
-  { "id": 3, "name": "Bombasto", "product":[]  },
-  { "id": 4, "name": "Celeritas" , "product":[] },
-  { "id": 5, "name": "Magneta", "product":[]  },
-  { "id": 6, "name": "RubberMan" , "product":[] },
-  { "id": 7, "name": "Dynama", "product":[]  },
-  { "id": 8, "name": "Dr IQ", "product":[]  },
-  { "id": 9, "name": "Magma" , "product":[] },
-  { "id": 10, "name": "Tornado", "product":[]  }
+  { "id": 1, "name": "Mr. Nice", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] },
+  { "id": 2, "name": "Narco", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}]  },
+  { "id": 3, "name": "Bombasto", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] },
+  { "id": 4, "name": "Celeritas" , "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] },
+  { "id": 5, "name": "Magneta", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}]  },
+  { "id": 6, "name": "RubberMan" , "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] },
+  { "id": 7, "name": "Dynama", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] },
+  { "id": 8, "name": "Dr IQ", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}]  },
+  { "id": 9, "name": "Magma" , "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}]},
+  { "id": 10, "name": "Tornado", "product":[{"id": 1, "name": "手机1"}, {"id": 2, "name": "电脑1"}] }
 ];

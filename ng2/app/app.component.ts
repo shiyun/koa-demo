@@ -5,7 +5,7 @@ import {DashboardComponent} from './dashboard.component';
 import {HeroService} from './hero.service';
 import {HeroDetail} from './hero-detail.component';
 import {HeroDetailThree} from './heroThree.component';
-import {LoginComponent} from './login.component';
+import {LoginComponent} from './Login/login.component';
 
 @Component({
   selector: 'my-app',
@@ -23,7 +23,8 @@ import {LoginComponent} from './login.component';
   {
     path: '/ng/login',
     name: 'Login',                                                                                                                                         
-    component: LoginComponent
+    component: LoginComponent,
+    useAsDefault: true
   },
   {
     path: '/ng/heroes',
@@ -33,8 +34,7 @@ import {LoginComponent} from './login.component';
   {
     path: '/ng/dashboard',
     name: 'MyDashboard',
-    component: DashboardComponent,
-    useAsDefault: true
+    component: DashboardComponent
   },
   {
     path: '/ng/heroDetail/:id',

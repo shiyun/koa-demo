@@ -13,7 +13,7 @@ import {HeroService} from './hero.service';
     `,
     styles: [`
         .list-top {list-type:none;}
-        .list-top li {cursor:pointer;height: 50px; width: 160px;line-height:50px;text-align:center;color:#fff;font-size:18px;display:inline-block;vertical-align: top;margin-left:20px;background-color:#607D8B;cursor:pointer;}
+        .list-top li {cursor:pointer;height: 50px; width: 160px;line-height:50px;text-align:center;color:#fff;font-size:18px;display:inline-block;vertical-align: top;margin:0 20px 20px 0;background-color:#607D8B;cursor:pointer;transition: all .3s linear;}
         .list-top li:hover{background-color:#eee;}
     `],
     providers: [HeroService]

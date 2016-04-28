@@ -48,7 +48,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                     core_1.Component({
                         selector: 'my-dashboard',
                         template: "\n        <h2>{{title}}</h2>\n        <ul class=\"list-top\">\n            <li *ngFor=\"#hero of tops;\" (click)=\"gotoDetail(hero)\">{{hero.name}}</li>\n        </ul>\n    ",
-                        styles: ["\n        .list-top {list-type:none;}\n        .list-top li {cursor:pointer;height: 50px; width: 160px;line-height:50px;text-align:center;color:#fff;font-size:18px;display:inline-block;vertical-align: top;margin-left:20px;background-color:#607D8B;cursor:pointer;}\n        .list-top li:hover{background-color:#eee;}\n    "],
+                        styles: ["\n        .list-top {list-type:none;}\n        .list-top li {cursor:pointer;height: 50px; width: 160px;line-height:50px;text-align:center;color:#fff;font-size:18px;display:inline-block;vertical-align: top;margin:0 20px 20px 0;background-color:#607D8B;cursor:pointer;transition: all .3s linear;}\n        .list-top li:hover{background-color:#eee;}\n    "],
                         providers: [hero_service_1.HeroService]
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])

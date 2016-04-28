@@ -1,15 +1,13 @@
 {
-  "name": "rss",
+  "name": "koa-demo",
   "version": "0.1.1",
   "description": "rss-builder",
   "main": "app.js",
   "dependencies": {
-    "angular2": "^2.0.0-beta.16",
     "co": "^4.5.2",
     "co-body": "^1.1.0",
     "co-redis": "^1.1.1",
     "co-views": "^0.3.0",
-    "es6-shim": "^0.35.0",
     "koa": "^0.18.1",
     "koa-bodyparser": "^2.0.1",
     "koa-logger": "^1.2.2",
@@ -17,27 +15,14 @@
     "koa-static-cache": "^3.1.7",
     "redis": "^0.12.1",
     "request": "^2.55.0",
-    "rxjs": "^5.0.0-beta.6",
     "swig": "^1.4.2",
     "systemjs": "^0.19.26",
-    "xml2js": "^0.4.16",
-    "xml2json": "^0.6.1",
-    "zone.js": "^0.6.12"
+    "xml2js": "^0.4.16"
   },
-  "devDependencies": {
-    "babel-core": "^6.7.7",
-    "concurrently": "^2.0.0",
-    "typescript": "^1.8.10",
-    "typings": "^0.8.1"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "node": "node-dev app.js --harmony",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w -outDir ./public/js/ts",
-    "typings": "typings",
-    "postinstall": "typings install",
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run node\" "
+    "start": "node-dev app.js --harmony"
   },
   "repository": {
     "type": "git",

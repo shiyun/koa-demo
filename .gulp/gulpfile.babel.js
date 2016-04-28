@@ -17,6 +17,7 @@ const PATHS = {
         html: '../dist/**/*.html'
     },
     libs: [
+		/*
         '../node_modules/es6-shim/es6-shim.min.js',
         '../node_modules/systemjs/dist/system-polyfills.js',
         '../node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
@@ -27,14 +28,18 @@ const PATHS = {
         '../node_modules/angular2/bundles/angular2.dev.js',
         '../node_modules/angular2/bundles/router.dev.js',
         '../node_modules/zone.js/dist/zone.min.js'
-		/*
-        '../node_modules/rxjs/Subject.js',
-        '../node_modules/rxjs/Subscriber.js',
-        '../node_modules/rxjs/Subscription.js',
-        '../node_modules/rxjs/util/throwError.js',
-        '../node_modules/rxjs/util/ObjectUnsubscribedError.js',
-        '../node_modules/rxjs/observable/PromiseObservable.js'
 		*/
+		'node_modules/angular2/bundles/js',
+		'node_modules/angular2/bundles/angular2.*.js*',
+		'node_modules/angular2/bundles/angular2-polyfills.js',
+		'node_modules/angular2/bundles/http.*.js*',
+		'node_modules/angular2/bundles/router.*.js*',
+		'node_modules/es6-shim/es6-shim.min.js*',
+		'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
+		'node_modules/systemjs/dist/*.*',
+		'node_modules/jquery/dist/jquery.*js',
+		'node_modules/bootstrap/dist/js/bootstrap*.js',
+		'node_modules/rxjs/bundles/Rx.js'
     ]
 };
 

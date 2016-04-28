@@ -11,7 +11,7 @@ const jsonFormat = require('./util/JsonFormat');
 const app = koa();
 
 app.use(bodyParser());
-app.use(staticCache(path.join(__dirname, 'public'), {
+app.use(staticCache(path.join(__dirname, 'ng2'), {
   maxAge:24 * 60 * 60
 }))
 

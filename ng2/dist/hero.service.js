@@ -29,7 +29,8 @@ System.register(['./mock-heros', 'angular2/core'], function(exports_1, context_1
                 };
                 HeroService.prototype.getHerosSlowly = function () {
                     return new Promise(function (resolve) {
-                        setTimeout(function () { return resolve(mock_heros_1.HEROS); }, 500);
+                        resolve(mock_heros_1.HEROS);
+                        //setTimeout(()=>resolve(HEROS), 500);
                     });
                 };
                 HeroService.prototype.getHero = function (id) {

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './heroes.component', './dashboard.component', './hero.service', './hero-detail.component', './heroThree.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './heroes.component', './dashboard.component', './hero.service', './hero-detail.component', './heroThree.component', './login.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, heroes_component_1, dashboard_component_1, hero_service_1, hero_detail_component_1, heroThree_component_1;
+    var core_1, router_1, heroes_component_1, dashboard_component_1, hero_service_1, hero_detail_component_1, heroThree_component_1, login_component_1;
     var AppComponent;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
             },
             function (heroThree_component_1_1) {
                 heroThree_component_1 = heroThree_component_1_1;
+            },
+            function (login_component_1_1) {
+                login_component_1 = login_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -48,6 +51,11 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
                         providers: [router_1.ROUTER_PROVIDERS, hero_service_1.HeroService]
                     }),
                     router_1.RouteConfig([
+                        {
+                            path: '/ng/login',
+                            name: 'Login',
+                            component: login_component_1.LoginComponent
+                        },
                         {
                             path: '/ng/heroes',
                             name: 'Heroes',

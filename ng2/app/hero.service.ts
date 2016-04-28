@@ -9,7 +9,8 @@ export class HeroService{
   }
   getHerosSlowly(){
     return new Promise<Hero[]>(resolve=>{
-      setTimeout(()=>resolve(HEROS), 500);
+      resolve(HEROS);
+      //setTimeout(()=>resolve(HEROS), 500);
     });
   }
   getHero(id: number){

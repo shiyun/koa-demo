@@ -5,6 +5,7 @@ import {DashboardComponent} from './dashboard.component';
 import {HeroService} from './hero.service';
 import {HeroDetail} from './hero-detail.component';
 import {HeroDetailThree} from './heroThree.component';
+import {LoginComponent} from './login.component';
 
 @Component({
   selector: 'my-app',
@@ -19,6 +20,11 @@ import {HeroDetailThree} from './heroThree.component';
 })
 
 @RouteConfig([
+  {
+    path: '/ng/login',
+    name: 'Login',                                                                                                                                         
+    component: LoginComponent
+  },
   {
     path: '/ng/heroes',
     name: 'Heroes',                                                                                                                                         

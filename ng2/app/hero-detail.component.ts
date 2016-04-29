@@ -35,7 +35,7 @@ export class HeroDetail implements OnInit {
     private _router: Router
   ){}
   
-  ngOnInit(){
+  ngOnInit(){    
     let id = +this._routeParams.get('id');
     this._heroService.getHero(id).then(hero=>{this.hero = hero; this.pro = hero.product}) 
   }

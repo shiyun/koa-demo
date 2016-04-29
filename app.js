@@ -3,7 +3,7 @@ import path from 'path';
 import koa from 'koa'
 import Router from 'koa-router'
 import logger from 'koa-logger'
-//import staticCache from 'koa-static-cache'
+import staticCache from 'koa-static-cache'
 import staticServ from 'koa-static'
 import bodyParser from 'koa-bodyparser'
 
@@ -11,7 +11,8 @@ import routeList from './routes/routes'
 import render from './lib/render'
 import jsonFormat from './util/JsonFormat'
 
-global.CONFIG = require('./' + process.argv[2]);
+const configFile =  process.env.configPath !== undefined ? process.env.configPath : process.argv[2];
+global.CONFIG = require('./' + configFile);
 const app = koa();
 const api = new Router();
 
@@ -21,7 +22,7 @@ app.use(api.routes())
 
 routeList(api);
 
-if(typeof staticCache != "undefined"){
+if(global.CONFIG.ENV === "Release"){
 	app.use(staticCache(path.join(__dirname, 'ng2'), {
 	  maxAge:24 * 60 * 60
 	}))
@@ -35,4 +36,6 @@ function* index(next) {
 	this.body = yield render('index', _data);
 }
 
-app.listen('3002', ()=>{console.log('listening on port 3002')});
+let port = global.CONFIG.PORT || 3002;
+
+app.listen(port, ()=>{console.log(`listening on port ${port}`)});

@@ -1,5 +1,5 @@
 typeof module !== 'undefined' && (module.exports = {
-    ENV : "PRD",
+    ENV : "Release",
     APP: "fabaoM",
     PORT: 3300,
     PEM: 'serverPrivateKey_release.pem',

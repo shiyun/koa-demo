@@ -6,25 +6,37 @@ import {HeroService} from './hero.service';
 import {HeroDetail} from './hero-detail.component';
 import {HeroDetailThree} from './heroThree.component';
 import {LoginComponent} from './Login/login.component';
+import {IndexComponent} from './index/index.component';
+
+const isLogin = false;
 
 @Component({
   selector: 'my-app',
   template:`
-    <h1>{{title}}</h1>    
+    <h1>this page from {{title}}</h1>   
+    <a [routerLink]="['Index']">Index</a> 
     <a [routerLink]="['MyDashboard']">MyDashboard</a>
     <a [routerLink]="['Heroes']">heroes</a>
+    <!--<indexPage (updateTitle)="changeTitle($event)"></indexPage>-->
     <router-outlet></router-outlet>
+    
   `,                                                                                                                                                                                                                                                                    
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, IndexComponent],
   providers: [ROUTER_PROVIDERS, HeroService]  
 })
 
 @RouteConfig([
   {
+    path: '/ng/index',
+    name: 'Index',                                                                                                                                         
+    component: IndexComponent,
+    useAsDefault: !isLogin
+  },
+  {
     path: '/ng/login',
     name: 'Login',                                                                                                                                         
     component: LoginComponent,
-    useAsDefault: true
+    useAsDefault: isLogin
   },
   {
     path: '/ng/heroes',
@@ -49,6 +61,9 @@ import {LoginComponent} from './Login/login.component';
 ])
 
 export class AppComponent {
-  title = 'Demo';
-  
+  title: string;
+  changeTitle(title: string){
+    this.title = title;
+    console.log(title)
+  }
 }

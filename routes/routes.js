@@ -1,5 +1,5 @@
 'use strict';
-const contrl = require('../controllers');
+import contrl from  '../controllers'
 
 function rourtes(app){
 	app.get(/^\/ng\/?/, contrl.ng2Ctrl);

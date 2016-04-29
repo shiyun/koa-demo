@@ -1,6 +1,6 @@
 'use strict';
-const render = require('../lib/render');
-const jsonFormat = require('../util/JsonFormat');
+import render from '../lib/render'
+import jsonFormat from '../util/JsonFormat'
 
 function Routes(){
 

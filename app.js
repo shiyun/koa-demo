@@ -1,16 +1,17 @@
 'use strict';
-const path = require('path'); 
-const koa = require('koa'); 
-const Router = require('koa-router');
-const logger = require('koa-logger');
-//const staticCache = require('koa-static-cache');
-const staticServ = require('koa-static');
-const bodyParser = require('koa-bodyparser');
-const routeList = require('./routes/routes');
-const render = require('./lib/render');
-const jsonFormat = require('./util/JsonFormat');
+import path from 'path';
+import koa from 'koa'
+import Router from 'koa-router'
+import logger from 'koa-logger'
+//import staticCache from 'koa-static-cache'
+import staticServ from 'koa-static'
+import bodyParser from 'koa-bodyparser'
 
+import routeList from './routes/routes'
+import render from './lib/render'
+import jsonFormat from './util/JsonFormat'
 
+global.CONFIG = require('./' + process.argv[2]);
 const app = koa();
 const api = new Router();
 

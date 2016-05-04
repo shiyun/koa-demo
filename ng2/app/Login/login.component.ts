@@ -19,8 +19,14 @@ export class LoginComponent {
   
   constructor(private _loginService: LoginService){}
   
-  login(phoneNum){
+  getVeriCode(phoneNum){
     let data = JSON.stringify({phone: phoneNum.value, type:1});    
-    this._loginService.getLogin(data).then(res=>console.log(res));
+    this._loginService.getVeriCode(data).then(res=>console.log(res));
   }
+  
+  login(phoneNum, veriNum){
+    let data = JSON.stringify({phone: phoneNum.value, verifyCode: veriNum.value});
+    this._loginService.login(data).then(res=>console.log(res));
+  }
+  
 }

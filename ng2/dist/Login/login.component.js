@@ -31,9 +31,13 @@ System.register(['angular2/core', '../hero-detail.component', './login.service',
                 function LoginComponent(_loginService) {
                     this._loginService = _loginService;
                 }
-                LoginComponent.prototype.login = function (phoneNum) {
+                LoginComponent.prototype.getVeriCode = function (phoneNum) {
                     var data = JSON.stringify({ phone: phoneNum.value, type: 1 });
-                    this._loginService.getLogin(data).then(function (res) { return console.log(res); });
+                    this._loginService.getVeriCode(data).then(function (res) { return console.log(res); });
+                };
+                LoginComponent.prototype.login = function (phoneNum, veriNum) {
+                    var data = JSON.stringify({ phone: phoneNum.value, verifyCode: veriNum.value });
+                    this._loginService.login(data).then(function (res) { return console.log(res); });
                 };
                 LoginComponent = __decorate([
                     core_1.Component({

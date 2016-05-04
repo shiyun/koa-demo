@@ -21,7 +21,7 @@ const api = new Router();
 app.use(bodyParser());
 app.use(api.routes())
    .use(api.allowedMethods());
-
+app.keys = ['some secret hurr'];
 app.use(session(app));
 
 routeList(api);
@@ -37,6 +37,7 @@ if(global.CONFIG.ENV === "Release"){
 api.get('/', index)
 
 function* index(next) {	
+	this.session.aa = '33333'
 	let _data = {title: '首页', result: jsonFormat.success('成功')};
 	this.body = yield render('index', _data);
 }

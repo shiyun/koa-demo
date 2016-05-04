@@ -6,7 +6,7 @@ import { Http, Headers, HTTP_PROVIDERS } from 'angular2/http';
 export class LoginService{  
   constructor(public _http: Http){}
     
-  getLogin(obj){
+  getVeriCode(obj){
       let headers = new Headers();
       //headers.append('Content-Type', 'application/x-www-form-urlencoded');
       headers.append('Content-Type', 'application/json');
@@ -16,11 +16,28 @@ export class LoginService{
                 .subscribe(
                   data =>resolve(data.json()),
                   err => reject(err),
-                  ()=>console.log('complete')
+                  ()=>console.log('get complete')
                 );
       });
       
       return loginPro;     
     
   }
+  
+  login(data){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    const _url = '/apiLogin';
+    let loginFun = new Promise((resolve, reject)=>{
+      this._http.post(_url, data, {headers: headers})
+                .subscribe(
+                  data=>resolve(data.json()),
+                  err=>reject(err),
+                  ()=>console.log('login complete')
+                )
+    });
+    
+    return loginFun;
+  }
+  
 }

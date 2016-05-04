@@ -25,7 +25,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                 function LoginService(_http) {
                     this._http = _http;
                 }
-                LoginService.prototype.getLogin = function (obj) {
+                LoginService.prototype.getVeriCode = function (obj) {
                     var _this = this;
                     var headers = new http_1.Headers();
                     //headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -33,9 +33,20 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                     var _url = '/getVeriCode';
                     var loginPro = new Promise(function (resolve, reject) {
                         _this._http.post(_url, obj, { headers: headers })
-                            .subscribe(function (data) { return resolve(data.json()); }, function (err) { return reject(err); }, function () { return console.log('complete'); });
+                            .subscribe(function (data) { return resolve(data.json()); }, function (err) { return reject(err); }, function () { return console.log('get complete'); });
                     });
                     return loginPro;
+                };
+                LoginService.prototype.login = function (data) {
+                    var _this = this;
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    var _url = '/apiLogin';
+                    var loginFun = new Promise(function (resolve, reject) {
+                        _this._http.post(_url, data, { headers: headers })
+                            .subscribe(function (data) { return resolve(data.json()); }, function (err) { return reject(err); }, function () { return console.log('login complete'); });
+                    });
+                    return loginFun;
                 };
                 LoginService = __decorate([
                     core_1.Injectable(), 

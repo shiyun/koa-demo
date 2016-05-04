@@ -442,3 +442,6 @@ a {
   text-decoration: none;
   color: #6796e4;
 }
+
+body {font-size:32px;font-size:.32rem;background-color:#F3F4F8;font-family:Arial,'\5fae\8f6f\96c5\9ed1';}
+[data-dpr="2"] .login-from .list-login li {border-bottom: .02rem solid #e4e4e4 !important;}

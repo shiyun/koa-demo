@@ -13,11 +13,11 @@ const isLogin = false;
 @Component({
   selector: 'my-app',
   template:`
-    <h1>this page from {{title}}</h1>   
+    <!--<h1>this page from {{title}}</h1>   
     <a [routerLink]="['Index']">Index</a> 
     <a [routerLink]="['MyDashboard']">MyDashboard</a>
     <a [routerLink]="['Heroes']">heroes</a>
-    <!--<indexPage (updateTitle)="changeTitle($event)"></indexPage>-->
+    <indexPage (updateTitle)="changeTitle($event)"></indexPage>-->
     <router-outlet></router-outlet>
     
   `,                                                                                                                                                                                                                                                                    

@@ -1,27 +1,26 @@
-import {Hero} from '../hero';
-import {HEROS} from '../mock-heros';
 import {Injectable} from 'angular2/core';
+import { Http, Headers, HTTP_PROVIDERS } from 'angular2/http';
 
 @Injectable()
-export class LoginService{
-  getHeros(){
-    return Promise.resolve(HEROS);
-  }
-  getHerosSlowly(){
-    return new Promise<Hero[]>(resolve=>{
-      resolve(HEROS);
-      //setTimeout(()=>resolve(HEROS), 500);
-    });
-  }
-  getHero(id: number){
-    return Promise.resolve(HEROS).then(heros=>heros.filter(hero=>hero.id === id)[0])
-  }
-  getPro(id: number, sid: number){
-    return Promise.resolve(HEROS).then(heros=>{
-      let r1 = heros.filter(hero=>hero.id === id)[0].product;      
-      let r2 = r1.filter(result=>result.id===sid)[0];
-      console.log(`select result: ${JSON.stringify(r2)}`);
-      return r2;
-    })
+
+export class LoginService{  
+  constructor(public _http: Http){}
+    
+  getLogin(obj){
+      let headers = new Headers();
+      //headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      headers.append('Content-Type', 'application/json');
+      const _url = '/getVeriCode';
+      let loginPro = new Promise((resolve, reject)=>{
+        this._http.post(_url, obj, {headers: headers})                       
+                .subscribe(
+                  data =>resolve(data.json()),
+                  err => reject(err),
+                  ()=>console.log('complete')
+                );
+      });
+      
+      return loginPro;     
+    
   }
 }

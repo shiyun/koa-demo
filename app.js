@@ -6,8 +6,10 @@ import logger from 'koa-logger'
 import staticCache from 'koa-static-cache'
 import staticServ from 'koa-static'
 import bodyParser from 'koa-bodyparser'
+import session from 'koa-session'
 
 import routeList from './routes/routes'
+import apiRouter from './routes/api'
 import render from './lib/render'
 import jsonFormat from './util/JsonFormat'
 
@@ -20,11 +22,14 @@ app.use(bodyParser());
 app.use(api.routes())
    .use(api.allowedMethods());
 
+app.use(session(app));
+
 routeList(api);
+apiRouter(api);
 
 if(global.CONFIG.ENV === "Release"){
 	app.use(staticCache(path.join(__dirname, 'ng2'), {
-	  maxAge:24 * 60 * 60
+	  maxAge:24 * 60 * 60 
 	}))
 }else{
 	app.use(staticServ(path.join(__dirname, 'ng2')));

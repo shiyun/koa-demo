@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta content="telephone=no,email=no" name="format-detection">
     <link rel="stylesheet" href="/styles.css">
+	<!-- 
 	<link rel="stylesheet" href="/node_modules/ng2-material/dist/ng2-material.css">
 	<link rel="stylesheet" href="/node_modules/ng2-material/dist/font.css">
+	 -->
 	<script>
 		(function(doc, win) {
 			var docEl = doc.documentElement,
@@ -19,10 +21,10 @@
 				var width = docEl.clientWidth;
 				if (width / dpr > 640) {
 					width = 640 * dpr;
-			}
-			docEl.dataset.width = width
-			docEl.dataset.percent = 100 * (width / 640);
-			docEl.style.fontSize = 100 * (width / 640) + 'px';
+				}
+				docEl.dataset.width = width
+				docEl.dataset.percent = 100 * (width / 640);
+				docEl.style.fontSize = 100 * (width / 640) + 'px';
 			};
 			recalc()
 			if (!doc.addEventListener) return;
@@ -40,6 +42,7 @@
     <script src="/node_modules/rxjs/bundles/Rx.js"></script>
     <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/http.dev.js"></script>
     <script src="/node_modules/ng2-material/dist/ng2-material.min.js"></script>
     
     <!-- 2. Configure SystemJS -->
@@ -60,6 +63,6 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading.</my-app>
+    <my-app>Loading...</my-app>
   </body>
 </html>

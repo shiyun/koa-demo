@@ -53,7 +53,7 @@ System.register(['angular2/core', 'angular2/router', './heroes.component', './da
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>this page from {{title}}</h1>   \n    <a [routerLink]=\"['Index']\">Index</a> \n    <a [routerLink]=\"['MyDashboard']\">MyDashboard</a>\n    <a [routerLink]=\"['Heroes']\">heroes</a>\n    <!--<indexPage (updateTitle)=\"changeTitle($event)\"></indexPage>-->\n    <router-outlet></router-outlet>\n    \n  ",
+                        template: "\n    <!--<h1>this page from {{title}}</h1>   \n    <a [routerLink]=\"['Index']\">Index</a> \n    <a [routerLink]=\"['MyDashboard']\">MyDashboard</a>\n    <a [routerLink]=\"['Heroes']\">heroes</a>\n    <indexPage (updateTitle)=\"changeTitle($event)\"></indexPage>-->\n    <router-outlet></router-outlet>\n    \n  ",
                         directives: [router_1.ROUTER_DIRECTIVES, index_component_1.IndexComponent],
                         providers: [router_1.ROUTER_PROVIDERS, hero_service_1.HeroService]
                     }),

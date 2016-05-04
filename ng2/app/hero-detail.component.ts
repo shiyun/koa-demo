@@ -27,7 +27,7 @@ export class HeroDetail implements OnInit {
   @Input() 
   hero: Hero;
   
-  pro: Hero;
+  @Input() pro: Hero;
   
   constructor(
     private _heroService: HeroService,

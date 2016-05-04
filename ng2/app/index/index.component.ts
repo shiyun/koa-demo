@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter } from 'angular2/core';
+import {FooterDownComponent} from '../footerDown/footerDown.component'
 
 @Component({
   selector: 'indexPage',
   templateUrl: 'app/index/index.html',                                                                                                                                                                                                                                                          
   styleUrls: ['app/index/index.css'],
-  properties: ['title']
+  directives: [FooterDownComponent]
 })
 
 

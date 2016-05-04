@@ -51,6 +51,10 @@ System.register(['angular2/core', 'angular2/router', './hero', './hero.service']
                     core_1.Input(), 
                     __metadata('design:type', hero_1.Hero)
                 ], HeroDetail.prototype, "hero", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', hero_1.Hero)
+                ], HeroDetail.prototype, "pro", void 0);
                 HeroDetail = __decorate([
                     core_1.Component({
                         selector: 'my-hero-detail',
